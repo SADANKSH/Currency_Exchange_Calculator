@@ -23,10 +23,13 @@ def take_input():
 
 
 def main():
-    while True:
+    consent = input('Do you agree? (y/n): ')
+
+    while consent.lower() =='y':
         amount, from_currency, to_currency = take_input()
         converted_amount = convert(amount, from_currency, to_currency)
         print(f'{amount} {from_currency} is equal to {converted_amount} {to_currency}')
+        consent = input('Do you agree? (y/n): ')
 
 
 if __name__ == '__main__':
